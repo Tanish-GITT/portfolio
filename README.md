@@ -11,7 +11,10 @@ portfolio/
 ├── styles.css          all styling; palette is at the top in :root
 ├── main.js             theme toggle, nav highlighting, scroll reveal
 ├── .gitignore          blocks *.pdf from ever being committed
-├── assets/             (empty — for og-image.png, screenshots, etc.)
+├── assets/
+│   └── og-image.png    1200×630 link-preview card
+├── tools/
+│   └── make_og_image.py  regenerates the card above
 └── README.md
 ```
 
@@ -43,19 +46,38 @@ Then open <http://localhost:8000>.
 
 ## What's still a placeholder
 
-Search `index.html` for `TODO` — two things left:
+Search `index.html` for `TODO` — one thing left:
 
 1. **Project repo links.** All six project links point at your GitHub profile
    (`github.com/Tanish-GITT`) rather than the specific repos, because I didn't
    have the repo URLs. Three are in the project headings, three in the
    "Source" links.
-2. **A link-preview image.** Add a 1200×630 PNG at `assets/og-image.png` so
-   the site renders a proper card when shared on LinkedIn, Slack, or WhatsApp.
-   Without it the preview shows text only.
 
 Optional: your CV lists no dates for the AI Developer experience, so there's a
 commented-out `entry__dates` line in that section. Uncomment and fill it in if
 you want dates shown.
+
+## The link-preview image
+
+`assets/og-image.png` is the 1200×630 card that appears when the URL is shared
+on LinkedIn, WhatsApp, Slack, or X. It's generated, not hand-drawn — the source
+is [tools/make_og_image.py](tools/make_og_image.py), which uses the same
+palette and fonts as the site.
+
+If you change your name, role, or tagline on the page, regenerate the card so
+the two don't drift apart:
+
+```bash
+python tools/make_og_image.py
+```
+
+That needs Pillow (`python -m pip install Pillow`), which is already installed
+on this machine. The script is a build tool, not part of the site — it isn't
+served to visitors.
+
+Because LinkedIn and WhatsApp cache preview images aggressively, a change won't
+show up in an existing share. Force a re-scrape with the
+[LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/).
 
 ## Editing content
 
