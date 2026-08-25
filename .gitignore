@@ -1,0 +1,13 @@
+# Never publish the CV. It contains a phone number and address, and anything
+# committed to a public repo stays recoverable from history and forks.
+# Keep your résumé outside this folder and send it by email on request.
+*.pdf
+assets/*.pdf
+
+# Local editor / tooling config — not part of the site.
+.claude/
+
+# OS cruft
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Tanish Saini — AI &amp; Backend Developer</title>
+<meta name="description" content="AI and backend developer building RAG pipelines, chatbots, and workflow automation with Python, the OpenAI API, Pinecone, and n8n. MCA, Maharishi Dayanand University.">
+<meta name="author" content="Tanish Saini">
+
+<link rel="canonical" href="https://tanish-gitt.github.io/portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tanish Saini — AI &amp; Backend Developer">
+<meta property="og:description" content="Building RAG pipelines, chatbots, and workflow automation with Python, the OpenAI API, Pinecone, and n8n.">
+<meta property="og:url" content="https://tanish-gitt.github.io/portfolio/">
+<!-- TODO: add a 1200×630 image at assets/og-image.png for link previews -->
+<meta property="og:image" content="https://tanish-gitt.github.io/portfolio/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232b4a6f'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23fbfaf8' text-anchor='middle'>T</text></svg>">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Applies the saved theme before first paint, so there's no white flash
+     on a dark-mode reload. Must stay inline and stay in <head>. -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.dataset.theme = saved;
+      }
+    } catch (e) { /* private browsing: fall back to prefers-color-scheme */ }
+  })();
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar__inner wrap">
+    <a class="topbar__name" href="#top">Tanish Saini</a>
+
+    <nav class="topbar__nav" aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button
+      class="theme-toggle"
+      type="button"
+      aria-pressed="false"
+      title="Toggle dark mode">
+      <span class="theme-toggle__icon" aria-hidden="true"></span>
+      <span class="u-visually-hidden">Toggle dark mode</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════════════════════════════════════════════════════
+       HERO
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="hero wrap" id="top">
+    <h1 class="hero__name">Tanish Saini</h1>
+    <p class="hero__title">AI &amp; Backend Developer</p>
+    <p class="hero__tagline">
+      I build AI applications that do real work — retrieval-augmented
+      generation pipelines, chatbots, and multi-step workflow automation
+      with Python, the OpenAI API, Pinecone, and n8n.
+    </p>
+
+    <ul class="hero__links">
+      <li>
+        <a href="mailto:tanishsaini2003@gmail.com" data-copy="tanishsaini2003@gmail.com">tanishsaini2003@gmail.com</a>
+      </li>
+      <li><a href="https://github.com/Tanish-GITT" rel="me noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/tanish-saini-9ab0b2" rel="me noopener">LinkedIn</a></li>
+      <li class="hero__location">Rohtak, Haryana, India</li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       ABOUT
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section wrap" id="about" aria-labelledby="about-h">
+    <h2 class="section__label" id="about-h">About</h2>
+    <div class="prose">
+      <p>
+        I'm an MCA graduate specializing in artificial intelligence and
+        backend development. Most of my work so far has been hands-on and
+        self-directed: building AI applications end to end, from chunking and
+        embedding documents through retrieval logic and prompt design, to the
+        automation layer that actually delivers the output to a person.
+      </p>
+      <p>
+        The problems I find interesting are the unglamorous ones around the
+        model — how you keep retrieval relevant as a corpus grows, what you do
+        when an API provider's rate limits break your pipeline, and how a
+        multi-step workflow fails safely when one node returns something
+        unexpected. I've hit all three and written up the fixes.
+      </p>
+      <p>
+        I'm currently looking for roles in AI engineering, backend
+        development, or automation engineering. The fastest way to reach me is
+        <a href="mailto:tanishsaini2003@gmail.com">email</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       EXPERIENCE
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section wrap" id="experience" aria-labelledby="experience-h">
+    <h2 class="section__label" id="experience-h">Experience</h2>
+
+    <article class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">
+          AI Developer
+          <span class="entry__org">Independent Projects</span>
+        </h3>
+        <!-- Your CV doesn't give dates for this. To add them, uncomment:
+        <p class="entry__dates"><time datetime="2024-06">Jun 2024</time> — Present</p>
+        -->
+      </div>
+      <ul class="entry__points">
+        <li>
+          Developed AI applications using the OpenAI API and vector databases
+          (Pinecone) to solve document analysis and search problems.
+        </li>
+        <li>
+          Built end-to-end RAG pipelines for document-based querying,
+          including chunking, embedding generation, and retrieval logic.
+        </li>
+        <li>
+          Implemented semantic search using embeddings and vector similarity
+          to improve query relevance and response accuracy.
+        </li>
+        <li>
+          Automated multi-step business workflows in n8n, integrating REST
+          APIs, Google Sheets, and email services.
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PROJECTS
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section wrap" id="projects" aria-labelledby="projects-h">
+    <h2 class="section__label" id="projects-h">Selected Projects</h2>
+
+    <article class="project">
+      <div class="project__head">
+        <h3 class="project__title">
+          <!-- TODO: point this at the specific repo URL -->
+          <a href="https://github.com/Tanish-GITT" rel="noopener">Lead Engagement Automation Pipeline</a>
+        </h3>
+      </div>
+      <p class="project__desc">
+        An end-to-end lead-generation and outreach pipeline in n8n: scrapes
+        leads from Google News RSS, logs them to Google Sheets as a
+        lightweight CRM, and uses the Groq API (Llama 3.1 8B Instant) to
+        generate a personalized outreach message per lead.
+      </p>
+      <ul class="entry__points">
+        <li>
+          Iterated through several AI API providers to resolve cost and
+          rate-limit constraints, landing on a reliable, low-latency solution.
+        </li>
+        <li>
+          Debugged node references, merge logic, and rate limiting, and
+          configured automated daily reporting over Gmail.
+        </li>
+        <li>
+          Sanitized credentials and published the workflow to GitHub. Submitted
+          as the technical assignment for an AI agency internship — shortlisted
+          for a Round&nbsp;2 interview.
+        </li>
+      </ul>
+      <ul class="tags" aria-label="Technologies used">
+        <li>n8n</li>
+        <li>Groq API</li>
+        <li>Llama 3.1</li>
+        <li>Google Sheets</li>
+        <li>Gmail</li>
+        <li>REST APIs</li>
+      </ul>
+      <p class="project__links">
+        <a href="https://github.com/Tanish-GITT" rel="noopener">Source</a>
+      </p>
+    </article>
+
+    <article class="project">
+      <div class="project__head">
+        <h3 class="project__title">
+          <!-- TODO: point this at the specific repo URL -->
+          <a href="https://github.com/Tanish-GITT" rel="noopener">RAG-Based Data Analysis AI Agent</a>
+        </h3>
+      </div>
+      <p class="project__desc">
+        A retrieval-augmented generation system for automated document
+        analysis, built on the OpenAI API. Embeddings, chunking, and semantic
+        search over Pinecone give it accurate, context-aware retrieval instead
+        of confident guessing.
+      </p>
+      <ul class="entry__points">
+        <li>
+          Containerized the components with Docker and automated the
+          processing workflow with n8n.
+        </li>
+      </ul>
+      <ul class="tags" aria-label="Technologies used">
+        <li>n8n</li>
+        <li>OpenAI API</li>
+        <li>Pinecone</li>
+        <li>Docker</li>
+      </ul>
+      <p class="project__links">
+        <a href="https://github.com/Tanish-GITT" rel="noopener">Source</a>
+      </p>
+    </article>
+
+    <article class="project">
+      <div class="project__head">
+        <h3 class="project__title">
+          <!-- TODO: point this at the specific repo URL -->
+          <a href="https://github.com/Tanish-GITT" rel="noopener">AI Chatbot with Persistent Memory</a>
+        </h3>
+      </div>
+      <p class="project__desc">
+        A conversational chatbot in Python with persistent memory, so
+        multi-turn conversations stay context-aware rather than resetting on
+        every message. Built on the OpenAI API for real-time interaction.
+      </p>
+      <ul class="tags" aria-label="Technologies used">
+        <li>Python</li>
+        <li>OpenAI API</li>
+      </ul>
+      <p class="project__links">
+        <a href="https://github.com/Tanish-GITT" rel="noopener">Source</a>
+      </p>
+    </article>
+
+    <article class="project">
+      <div class="project__head">
+        <h3 class="project__title">Also built</h3>
+      </div>
+      <ul class="entry__points">
+        <li>
+          <strong>YouTube homepage replica</strong> — a responsive front-end
+          clone of the YouTube homepage in hand-written HTML and CSS.
+        </li>
+        <li>
+          <strong>Flappy Bird</strong> — a 2D game in Python implementing
+          physics mechanics and collision detection.
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SKILLS
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section wrap" id="skills" aria-labelledby="skills-h">
+    <h2 class="section__label" id="skills-h">Technical Skills</h2>
+    <dl class="skills">
+      <div class="skills__group">
+        <dt>Languages</dt>
+        <dd>Python, C, C++, SQL</dd>
+      </div>
+      <div class="skills__group">
+        <dt>AI &amp; ML</dt>
+        <dd>
+          OpenAI API, Groq API, Pinecone, RAG (retrieval-augmented
+          generation), vector databases, embeddings, semantic search
+        </dd>
+      </div>
+      <div class="skills__group">
+        <dt>Automation</dt>
+        <dd>n8n, REST APIs, JSON, workflow automation</dd>
+      </div>
+      <div class="skills__group">
+        <dt>Tools</dt>
+        <dd>Git, GitHub, Docker</dd>
+      </div>
+      <div class="skills__group">
+        <dt>Core CS</dt>
+        <dd>
+          Data structures, algorithms, object-oriented programming,
+          problem solving
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       EDUCATION
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section wrap" id="education" aria-labelledby="education-h">
+    <h2 class="section__label" id="education-h">Education</h2>
+
+    <article class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">
+          Master of Computer Applications (MCA)
+          <span class="entry__org">Maharishi Dayanand University, Rohtak</span>
+        </h3>
+        <p class="entry__dates">2026</p>
+      </div>
+      <p class="entry__where">75.4% · Specialization in Artificial Intelligence</p>
+    </article>
+
+    <article class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">
+          Bachelor of Computer Applications (BCA)
+          <span class="entry__org">Maharishi Dayanand University, Rohtak</span>
+        </h3>
+        <p class="entry__dates">2024</p>
+      </div>
+      <p class="entry__where">69.70%</p>
+    </article>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CERTIFICATIONS
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section wrap" id="certifications" aria-labelledby="certifications-h">
+    <h2 class="section__label" id="certifications-h">Certifications</h2>
+    <ul class="certs">
+      <li>
+        <span class="certs__name">C++ with OOP</span>
+        <span class="certs__org">Hartron Skill Center, Rohtak</span>
+      </li>
+      <li>
+        <span class="certs__name">Python</span>
+        <span class="certs__org">Code Pulse, Rohtak</span>
+      </li>
+      <li>
+        <span class="certs__name">HTML and CSS</span>
+        <span class="certs__org">Coursera</span>
+      </li>
+      <li>
+        <span class="certs__name">C# and Unity</span>
+        <span class="certs__org">Coursera</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTACT
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section section--contact wrap" id="contact" aria-labelledby="contact-h">
+    <h2 class="section__label" id="contact-h">Contact</h2>
+    <div class="prose">
+      <p>
+        I'm open to roles in AI engineering, backend development, and
+        automation engineering — and happy to talk about RAG systems,
+        vector search, or getting n8n workflows to behave under real
+        rate limits.
+      </p>
+      <p>
+        Email is the best way to reach me. I'll send my full résumé on
+        request.
+      </p>
+    </div>
+    <p class="contact__actions">
+      <a class="btn btn--primary" href="mailto:tanishsaini2003@gmail.com">tanishsaini2003@gmail.com</a>
+      <button class="btn" type="button" data-copy="tanishsaini2003@gmail.com">Copy address</button>
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer wrap">
+  <p>
+    © <span data-year>2026</span> Tanish Saini.
+    Built with hand-written HTML and CSS.
+  </p>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
