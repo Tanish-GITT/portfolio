@@ -46,12 +46,23 @@ Then open <http://localhost:8000>.
 
 ## What's still a placeholder
 
-Search `index.html` for `TODO` — one thing left:
+One thing left:
 
-1. **Project repo links.** All six project links point at your GitHub profile
-   (`github.com/Tanish-GITT`) rather than the specific repos, because I didn't
-   have the repo URLs. Three are in the project headings, three in the
-   "Source" links.
+1. **The AI Chatbot project has no public repo yet.** Its heading link and its
+   "Source" link both point at `github.com/Tanish-GITT` on purpose, so the
+   entry doesn't dangle. When the repo goes up, swap both for the real URL.
+   There's a comment in `index.html` marking the spot.
+
+The other project links point at their real repos:
+
+| Project | Repo |
+| --- | --- |
+| Lead Engagement Automation Pipeline | `N8N_autoleadgen-outreach` |
+| RAG-Based Data Analysis AI Agent | `N8N_RAG` |
+
+The two "Also built" entries (YouTube homepage replica, Flappy Bird) are plain
+text, not links, even though repos exist for both — add links there if you want
+them clickable.
 
 Optional: your CV lists no dates for the AI Developer experience, so there's a
 commented-out `entry__dates` line in that section. Uncomment and fill it in if
