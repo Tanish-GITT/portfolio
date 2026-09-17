@@ -57,16 +57,27 @@
   }
 
   /* ------------------------------------------------------------------------
-     2. Sticky topbar shadow
+     2. Sticky topbar shadow + scroll progress bar
      Show the bottom rule only once content has scrolled under the bar.
+     The progress bar is driven by a CSS custom property so the transition
+     rule in styles.css stays in charge of the animation.
      ------------------------------------------------------------------------ */
   var topbar = document.querySelector('.topbar');
+  var progressEl = document.querySelector('.progress');
 
   if (topbar) {
     var ticking = false;
 
     var updateStuck = function () {
       topbar.classList.toggle('is-stuck', window.scrollY > 8);
+
+      // Scroll progress: how far through the scrollable document we are.
+      if (progressEl) {
+        var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+        progressEl.style.setProperty('--progress', progress.toFixed(4));
+      }
+
       ticking = false;
     };
 
@@ -199,4 +210,47 @@
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });
+
+  /* ------------------------------------------------------------------------
+     7. Mobile menu — close when a nav link is clicked
+     ------------------------------------------------------------------------ */
+  var burger = document.querySelector('.burger');
+  var menu   = document.getElementById('menu');
+
+  if (burger && menu) {
+    // Toggle open/closed on burger click
+    burger.addEventListener('click', function () {
+      var isOpen = menu.dataset.open === 'true';
+      menu.dataset.open = String(!isOpen);
+      burger.setAttribute('aria-expanded', String(!isOpen));
+      document.body.classList.toggle('is-locked', !isOpen);
+    });
+
+    // Close when any link inside the menu is tapped
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.dataset.open = 'false';
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('is-locked');
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     8. Timeline — light up each node as it scrolls into view
+     ------------------------------------------------------------------------ */
+  if ('IntersectionObserver' in window) {
+    var tlObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.js-tl').forEach(function (el) {
+      tlObserver.observe(el);
+    });
+  }
+
 })();
