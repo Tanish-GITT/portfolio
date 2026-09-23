@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap">
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="chat-widget.css">
 </head>
 
 <body>
@@ -471,45 +472,35 @@
         <article class="p-card" data-tilt data-case="case-chat">
           <div class="p-card__grid">
             <div class="p-card__body">
-              <p class="p-card__kicker"><b>03</b> Conversation state</p>
+              <p class="p-card__kicker"><b>03</b> Conversation state · Live demo</p>
               <h3 class="p-card__title h-card">
-                <!-- Deliberate: no public repo for this one yet, so both this
-                     link and the "Source" link below point at the profile. -->
-                <a href="https://github.com/Tanish-GITT" rel="noopener">
+                <a href="https://github.com/Tanish-GITT/AI-chatbot-persistent-memory" rel="noopener">
                   AI Chatbot with Persistent Memory
                 </a>
               </h3>
               <p class="p-card__desc">
                 A conversational chatbot in Python with persistent memory, so
                 multi-turn conversations stay context-aware rather than resetting
-                on every message. Built on the OpenAI API for real-time
-                interaction.
+                on every message. Built on the OpenAI API (gpt-4o-mini) for real-time
+                interaction. SQLite stores conversation history. Try it below!
               </p>
               <ul class="tags" aria-label="Technologies used">
-                <li>Python</li><li>OpenAI API</li>
+                <li>Python</li><li>Flask</li><li>OpenAI API</li><li>SQLite</li>
               </ul>
               <div class="p-card__foot">
-                <a class="p-card__link" href="https://github.com/Tanish-GITT" rel="noopener">
+                <a class="p-card__link" href="https://github.com/Tanish-GITT/AI-chatbot-persistent-memory" rel="noopener">
                   <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg>
-                  Profile
+                  Source
                 </a>
                 <button class="p-card__link" type="button" data-case-open="case-chat" hidden>
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 3.5h12M2 8h12M2 12.5h7"/></svg>
                   Case study
                 </button>
-                <span class="p-card__note">Repository not public yet</span>
+                <span class="p-card__note">Live demo · Try it now!</span>
               </div>
             </div>
 
-            <div class="p-card__viz">
-              <ol class="flow" aria-label="Pipeline">
-                <li>User message</li>
-                <li style="--d: 0ms">Load stored history</li>
-                <li style="--d: 700ms">Assemble context</li>
-                <li style="--d: 1400ms">OpenAI completion</li>
-                <li style="--d: 2100ms">Reply + persist turn</li>
-              </ol>
-            </div>
+            <div class="p-card__viz" id="chatWidget" style="min-height: 300px;"></div>
           </div>
         </article>
       </div>
@@ -764,6 +755,12 @@
     <span>© <span data-year></span> Tanish Saini</span>
   </div>
 </footer>
+
+<script src="chat-widget.js"></script>
+<script>
+  // Deployed chatbot API URL
+  window.CHATBOT_API_URL = 'https://ai-chatbot-6d43.onrender.com';
+</script>
 
 
 </body>
